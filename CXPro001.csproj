@@ -1,0 +1,515 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{321F60AD-9EEB-4B71-8FFB-9F067856CDCF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CXPro001</RootNamespace>
+    <AssemblyName>CXPro001</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\x64\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>img\1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Google.Protobuf">
+      <HintPath>SunnyLib\dllx64\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="HslCommunication">
+      <HintPath>C:\DLL\HslCommunication.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics, Version=3.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>SunnyLib\dllx64\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>SunnyLib\dllx64\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NetWorkHelper">
+      <HintPath>C:\DLL\NetWorkHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="NModbus4, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>SunnyLib\dllx64\NModbus4.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="xktComm">
+      <HintPath>bin\Debug\3rdParty\xktComm.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="classes\barcode_delijie.cs" />
+    <Compile Include="classes\barcode_jienshi.cs" />
+    <Compile Include="classes\CCDPostion_High.cs" />
+    <Compile Include="classes\FlowMeter.cs" />
+    <Compile Include="classes\My_9803.cs" />
+    <Compile Include="classes\My_CCD.cs" />
+    <Compile Include="classes\My_Laser.cs" />
+    <Compile Include="classes\My_Take.cs" />
+    <Compile Include="classes\My_XR_100.cs" />
+    <Compile Include="classes\My_STCords.cs" />
+    <Compile Include="controls\CHCNetSDK.cs" />
+    <Compile Include="controls\PlayCtrl.cs" />
+    <Compile Include="controls\ProCountDispl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ProCountDispl.Designer.cs">
+      <DependentUpon>ProCountDispl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ProCountslist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ProCountslist.Designer.cs">
+      <DependentUpon>ProCountslist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\SQL_Test.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\SQL_Test.Designer.cs">
+      <DependentUpon>SQL_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\TableLayout.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\TableLayout.designer.cs">
+      <DependentUpon>TableLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Form_Hand_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Form_Hand_Select.Designer.cs">
+      <DependentUpon>Form_Hand_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Frm_Set_Modle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Frm_Set_Modle.Designer.cs">
+      <DependentUpon>Frm_Set_Modle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gl\CGoogolMotion.cs" />
+    <Compile Include="gl\config.cs" />
+    <Compile Include="gl\gtgl500.cs" />
+    <Compile Include="gl\gts.cs" />
+    <Compile Include="gl\LookAheadEx.cs" />
+    <Compile Include="gl\My_io.cs" />
+    <Compile Include="gl\My_Motion.cs" />
+    <Compile Include="gl\WDLog.cs" />
+    <Compile Include="myclass\Logger.cs" />
+    <Compile Include="myclass\MyType.cs" />
+    <Compile Include="myclass\SysStatus.cs" />
+    <Compile Include="myclass\User.cs" />
+    <Compile Include="Set_Window\CordSet.cs" />
+    <Compile Include="classes\Hanslaser.cs" />
+    <Compile Include="classes\s7com.cs" />
+    <Compile Include="classes\My_8740.cs" />
+    <Compile Include="classes\visioncam.cs" />
+    <Compile Include="controls\DATETIME.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\DATETIME.Designer.cs">
+      <DependentUpon>DATETIME.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\logdata.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\logdata.Designer.cs">
+      <DependentUpon>logdata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ProductSta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ProductSta.Designer.cs">
+      <DependentUpon>ProductSta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\SqlData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\SqlData.Designer.cs">
+      <DependentUpon>SqlData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FormTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormTest.Designer.cs">
+      <DependentUpon>FormTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FormMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormMessage.Designer.cs">
+      <DependentUpon>FormMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FormRun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormRun.Designer.cs">
+      <DependentUpon>FormRun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FormSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormSetting.Designer.cs">
+      <DependentUpon>FormSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FormSQL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormSQL.Designer.cs">
+      <DependentUpon>FormSQL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myclass\Function.cs" />
+    <Compile Include="myclass\hardware.cs" />
+    <Compile Include="myclass\RunMany.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RunControl\DatasSetup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RunControl\DatasSetup.Designer.cs">
+      <DependentUpon>DatasSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RunControl\MainRun.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RunControl\MainRun.Designer.cs">
+      <DependentUpon>MainRun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Set_Window\FlatnessSet.cs" />
+    <Compile Include="Set_Window\hanslaserSetCtr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Set_Window\hanslaserSetCtr.Designer.cs">
+      <DependentUpon>hanslaserSetCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Set_Window\Highset.cs" />
+    <Compile Include="Set_Window\HighSetCtr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Set_Window\HighSetCtr.Designer.cs">
+      <DependentUpon>HighSetCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Set_Window\OpenSet.cs" />
+    <Compile Include="Set_Window\PostionSet.cs" />
+    <Compile Include="Set_Window\ThermSet.cs" />
+    <Compile Include="Set_Window\ThermSetCtr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Set_Window\ThermSetCtr.Designer.cs">
+      <DependentUpon>ThermSetCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowControl\BarTestShowCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShowControl\BarTestShowCtrl.Designer.cs">
+      <DependentUpon>BarTestShowCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowControl\CCD_Pos_High_ShowCtr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShowControl\CCD_Pos_High_ShowCtr.Designer.cs">
+      <DependentUpon>CCD_Pos_High_ShowCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowControl\ChecksShowCtr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShowControl\ChecksShowCtr.Designer.cs">
+      <DependentUpon>ChecksShowCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowControl\DaDianShowCtr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShowControl\DaDianShowCtr.Designer.cs">
+      <DependentUpon>DaDianShowCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowControl\FlatnessShowCtr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShowControl\FlatnessShowCtr.Designer.cs">
+      <DependentUpon>FlatnessShowCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowControl\HanslerShowCtr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShowControl\HanslerShowCtr.Designer.cs">
+      <DependentUpon>HanslerShowCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowControl\CCDPosShowCtr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShowControl\CCDPosShowCtr.Designer.cs">
+      <DependentUpon>CCDPosShowCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowControl\CCDHeightControls.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShowControl\CCDHeightControls.Designer.cs">
+      <DependentUpon>CCDHeightControls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowControl\IOShowCtr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShowControl\IOShowCtr.Designer.cs">
+      <DependentUpon>IOShowCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowControl\ModeNumShowCtr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShowControl\ModeNumShowCtr.Designer.cs">
+      <DependentUpon>ModeNumShowCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowControl\MontionShowCtr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShowControl\MontionShowCtr.Designer.cs">
+      <DependentUpon>MontionShowCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowControl\MotorLabShowCtr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShowControl\MotorLabShowCtr.Designer.cs">
+      <DependentUpon>MotorLabShowCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowControl\P_OS_F_CheckShowCtr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShowControl\P_OS_F_CheckShowCtr.Designer.cs">
+      <DependentUpon>P_OS_F_CheckShowCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowControl\TS7631ShowCtr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShowControl\TS7631ShowCtr.Designer.cs">
+      <DependentUpon>TS7631ShowCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowControl\TS8740SshowCtr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShowControl\TS8740SshowCtr.Designer.cs">
+      <DependentUpon>TS8740SshowCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowControl\TS9803ShowCtr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShowControl\TS9803ShowCtr.Designer.cs">
+      <DependentUpon>TS9803ShowCtr.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="controls\DATETIME.resx">
+      <DependentUpon>DATETIME.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\logdata.resx">
+      <DependentUpon>logdata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\ProCountDispl.resx">
+      <DependentUpon>ProCountDispl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\ProCountslist.resx">
+      <DependentUpon>ProCountslist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\ProductSta.resx">
+      <DependentUpon>ProductSta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\SqlData.resx">
+      <DependentUpon>SqlData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\SQL_Test.resx">
+      <DependentUpon>SQL_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormTest.resx">
+      <DependentUpon>FormTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormMessage.resx">
+      <DependentUpon>FormMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormRun.resx">
+      <DependentUpon>FormRun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormSetting.resx">
+      <DependentUpon>FormSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormSQL.resx">
+      <DependentUpon>FormSQL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Form_Hand_Select.resx">
+      <DependentUpon>Form_Hand_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Frm_Set_Modle.resx">
+      <DependentUpon>Frm_Set_Modle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RunControl\DatasSetup.resx">
+      <DependentUpon>DatasSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RunControl\MainRun.resx">
+      <DependentUpon>MainRun.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Set_Window\hanslaserSetCtr.resx">
+      <DependentUpon>hanslaserSetCtr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Set_Window\HighSetCtr.resx">
+      <DependentUpon>HighSetCtr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Set_Window\ThermSetCtr.resx">
+      <DependentUpon>ThermSetCtr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowControl\BarTestShowCtrl.resx">
+      <DependentUpon>BarTestShowCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowControl\CCD_Pos_High_ShowCtr.resx">
+      <DependentUpon>CCD_Pos_High_ShowCtr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowControl\ChecksShowCtr.resx">
+      <DependentUpon>ChecksShowCtr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowControl\DaDianShowCtr.resx">
+      <DependentUpon>DaDianShowCtr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowControl\FlatnessShowCtr.resx">
+      <DependentUpon>FlatnessShowCtr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowControl\HanslerShowCtr.resx">
+      <DependentUpon>HanslerShowCtr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowControl\CCDPosShowCtr.resx">
+      <DependentUpon>CCDPosShowCtr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowControl\CCDHeightControls.resx">
+      <DependentUpon>CCDHeightControls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowControl\IOShowCtr.resx">
+      <DependentUpon>IOShowCtr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowControl\ModeNumShowCtr.resx">
+      <DependentUpon>ModeNumShowCtr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowControl\MontionShowCtr.resx">
+      <DependentUpon>MontionShowCtr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowControl\MotorLabShowCtr.resx">
+      <DependentUpon>MotorLabShowCtr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowControl\P_OS_F_CheckShowCtr.resx">
+      <DependentUpon>P_OS_F_CheckShowCtr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowControl\TS7631ShowCtr.resx">
+      <DependentUpon>TS7631ShowCtr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowControl\TS8740SshowCtr.resx">
+      <DependentUpon>TS8740SshowCtr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowControl\TS9803ShowCtr.resx">
+      <DependentUpon>TS9803ShowCtr.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\1.ico" />
+    <None Include="img\auto.jpg" />
+    <None Include="img\clean.jpg" />
+    <Content Include="img\hand.jpg" />
+    <None Include="img\protect.jpg" />
+    <None Include="bin\Debug\Image\产品\E160.PNG" />
+    <None Include="bin\Debug\Image\产品\Y23.png" />
+    <None Include="bin\Debug\Image\产品\473.png" />
+    <None Include="bin\Debug\Image\产品\446.png" />
+    <None Include="bin\Debug\Image\420素材\420主界面-1.png" />
+    <None Include="bin\Debug\Image\420素材\平面度.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyLib\MyLib.csproj">
+      <Project>{85ff29bc-2148-4601-9cca-6fcf115129f4}</Project>
+      <Name>MyLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
